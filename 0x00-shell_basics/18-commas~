@@ -1,2 +1,0 @@
-#!/bin/bash
-ls -a -m --group-directories-first -F --file-type
