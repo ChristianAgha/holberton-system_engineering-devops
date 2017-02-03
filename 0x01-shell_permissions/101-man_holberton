@@ -1,0 +1,24 @@
+.\" Manpage for SOMETHING.
+.\" Contact AUTHOR@EMAIL.com to correct errors or typos
+.TH SOMETHING 7 "31 December 2016" "1.0" "SOMETHING User Manual"
+.SH NAME
+SOMETHING \- brief example
+.SH SYNOPSIS
+SOMETHING [TEXT] [PARAMETERS]
+.SH DESCRIPTION
+A description of this imaginary object called "SOMETHING".
+.SH OPTIONS
+.RS 4
+.PP
+\fB\-\-timeout\fR=\fITIMEOUT\fR
+.RE
+.SH EXAMPLES
+SOMETHING --parameters random-text
+.SH "SEE ALSO"
+command(1), game(6)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Some Random Dude (dude@someplace.com)
+.SH COPYRIGHT
+Place a GPL header here or whatever license terms you prefer.
