@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(grep -o ":" <<< "$PATH" | wc -l)
+tr -dc ':' <<< "$PATH" | wc -c
