@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $(grep -o ":" <<EOF < "$PATH" | wc -l)
+EOF
