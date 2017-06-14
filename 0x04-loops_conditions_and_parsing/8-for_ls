@@ -3,5 +3,5 @@
 # in a list format, where only the part of the name after
 # the first dash is displayed
 
-LIST="$(ls ./*)"
-for file in $LIST; do echo "$file" | cut -c5-; done
+LIST="$(ls)"
+for file in $LIST; do echo "$file" | cut -c3-; done
