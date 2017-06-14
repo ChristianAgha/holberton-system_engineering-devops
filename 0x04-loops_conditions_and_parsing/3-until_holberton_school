@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that displays Holberton School 10 times
+
+i=10
+until [ $i -eq 0 ]; do echo Holberton School; (( i-- )); done
