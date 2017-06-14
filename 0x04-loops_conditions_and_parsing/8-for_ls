@@ -4,4 +4,4 @@
 # the first dash is displayed
 
 LIST="$(ls)"
-for file in $LIST; do echo "$file" | cut -c3-; done
+for file in $LIST; do echo "$file" | cut -d '-' -f2; done
