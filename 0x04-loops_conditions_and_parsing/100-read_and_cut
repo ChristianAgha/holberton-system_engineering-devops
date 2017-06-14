@@ -3,5 +3,5 @@
 # and only displayes username, group id and shell full path for user
 
 while read -r; do
-      echo "$REPLY" | cut -d ':' -f1,3,6;
+      echo "$REPLY" | cut -d ':' -f1,3,6
       done < /etc/passwd
