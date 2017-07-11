@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # Install nginx, change default landing message
+apt-get install update
 apt-get -y install nginx
 service nginx start
-mv index.html index.html.bak
+mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.bak
 echo "Holberton School for the win!" > /usr/share/nginx/html/index.html
 string="location /redirect_me {\n\t\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}"
-sed -i "s|#error_page 404 /404.html;|$string|" /etc/nginx/sites-available/default
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+sed -i /"#error_page 404 \/404.html;/ a\\$string" /etc/nginx/sites-available/default
 service nginx reload
+service nginx restart
