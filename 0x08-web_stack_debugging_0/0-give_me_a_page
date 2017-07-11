@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # a sript to fix the server
+docker exec -ti 0475f4ee0843 /bin/bash
 sudo service apache2 start
