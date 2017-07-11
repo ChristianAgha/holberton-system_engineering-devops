@@ -6,5 +6,6 @@ mv index.html index.html.bak
 echo "Holberton School for the win!" > /usr/share/nginx/html/index.html
 string="error_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n\tlocation /redirect_me {\n\t\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}"
 sed -i "s|#error_page 404 /404.html;|$string|" /etc/nginx/sites-available/default
-echo "<h1 style='color:red'>Error 404: Not found :-(</h1><p>Ceci n'est pas une page</p>" | sudo tee /usr/share/nginx/html/custom_404.html
+echo "<h1>Ceci n'est pas une page</h1>" | sudo tee /usr/share/nginx/html/custom_404.html
 service nginx reload
+service nginx restart
