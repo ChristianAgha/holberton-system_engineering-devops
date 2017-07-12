@@ -5,7 +5,7 @@ apt-get -y install nginx
 service nginx start
 mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.bak
 echo "Holberton School for the win!" > /usr/share/nginx/html/index.html
-string="error_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n\tlocation /redirect_me {\n\t\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}"
+string="\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n\tlocation /redirect_me {\n\t\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n\t}"
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 sed -i /"#error_page 404 \/404.html;/ a\\$string" /etc/nginx/sites-available/default
 echo "<h1>Ceci n'est pas une page</h1>" | sudo tee /usr/share/nginx/html/custom_404.html
