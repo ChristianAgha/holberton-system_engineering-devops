@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# fixes Nginx bug [unable to connect to port 80]
+cd /etc/nginx/sites-enabled
+ln -sf /etc/nginx/sites-available/default default
+service nginx stop
