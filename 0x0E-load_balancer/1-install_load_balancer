@@ -6,7 +6,7 @@ sudo apt-get dist-upgrade
 sudo apt-get install haproxy
 sudo cp /etc/haproxy/haproxy.cfg{,.original}
 sudo sed -i '$ a \
-\nlisten appname *:80\n \
+\nlisten appname *:80 \
 \tmode http \
 \tstats enable \
 \tstats uri /haproxy?stats \
