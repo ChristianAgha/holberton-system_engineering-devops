@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy
+sudo add-apt-repository ppa:vbernat/haproxy-1.5 -y
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install haproxy
+sudo cp /etc/haproxy/haproxy.cfg{,.original}
+sudo sed -i '$ a \
+\nlisten appname *:80\n \
+\tmode http \
+\tstats enable \
+\tstats uri /haproxy?stats \
+\tstats realm Strictly\ Private \
+\tbalance roundrobin \
+\toption httpclose \
+\toption forwardfor \
+\tserver 112-web-01 66.70.184.162:80 check \
+\tserver 112-web-02 142.44.164.120:80 check' /etc/haproxy/haproxy.cfg
+sudo service haproxy start
