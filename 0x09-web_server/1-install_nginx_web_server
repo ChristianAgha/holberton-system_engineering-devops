@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Install nginx, change default landing message
-apt-get -y install nginx
-service nginx start
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo service nginx start
 mv index.html index.html.bak
 echo "Holberton School for the win!" > /usr/share/nginx/html/index.html
+sudo service nginx restart
+sudo service nginx reload
