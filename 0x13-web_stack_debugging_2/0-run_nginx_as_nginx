@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Run Nginx as user nginx
+sudo pkill -f apache2
+cd /etc/nginx/sites-available
+sudo sed -i 's/80 default_server/8080 default_server/g' default
+cd ..
+chmod 777 nginx.conf
+sudo sed -i 's/#user www-data;/user nginx;/g' nginx.conf
+sudo service nginx restart
