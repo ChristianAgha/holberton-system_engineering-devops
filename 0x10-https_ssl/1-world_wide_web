@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+if [ $# -eq 1 ]
+then
+   www=$(dig "www.$1" | grep -A1 'ANSWER SECTION:' | awk '/IN/ {print $5;}')
+   echo "The subdomain www is a A record and points to $www"
+   lb01=$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | awk '/IN/ {print $5;}')
+   echo "The subdomain lb-01 is a A record and points to $lb01"
+   web1=$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | awk '/IN/ {print $5;}')
+   echo "The subdomain web-01 is a A record and points to $web1"
+   web2=$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | awk '/IN/ {print $5;}')
+   echo "The subdomain web-02 is a A record and points to $web2"
+fi
+
+if [ $# -eq 2 ]
+then
+   sub=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk '/IN/ {print $5;}')
+   echo "The subdomain $2 is a A record and points to $sub"
+fi
