@@ -26,4 +26,7 @@ if __name__ == "__main__":
                 dict_list.append(json_dict)
         employee_dict[user.get("id")] = dict_list
         dict_list = []
-    print(json.dumps(employee_dict))
+    file = "todo_all_employees.json"
+    with open(file, 'w', encoding="utf-8") as json_file:
+        dump = json.dumps(employee_dict)
+        json_file.write(dump)
