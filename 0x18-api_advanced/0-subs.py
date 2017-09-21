@@ -6,7 +6,8 @@ import requests
 def number_of_subscribers(subreddit):
     """ Func Definition """
     url = "https://www.reddit.com/r/" + subreddit + "/about.json"
-    req = requests.get(url)
+    user_agent = {'User-agent': 'Christian'}
+    req = requests.get(url, headers = user_agent)
 
     if req.status_code == 200:
         about = req.json()
