@@ -2,6 +2,7 @@
 """ Queries the Reddit API, parses the title of all hot articles """
 import requests
 
+
 def count_words(subreddit, word_list, hot_list=[], after=""):
     """ Func Def """
     url = "https://www.reddit.com/r/" + subreddit + "/hot.json" +\
@@ -19,6 +20,7 @@ def count_words(subreddit, word_list, hot_list=[], after=""):
             count_words(subreddit, word_list, hot_list, after)
         else:
             parse_titles(hot_list, word_list)
+
 
 def parse_titles(hot_list, word_list):
     """ Parse the title list """
