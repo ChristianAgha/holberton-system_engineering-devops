@@ -20,6 +20,8 @@ def count_words(subreddit, word_list, hot_list=[], after=""):
             count_words(subreddit, word_list, hot_list, after)
         else:
             parse_titles(hot_list, word_list)
+    else:
+        return(print())
 
 
 def parse_titles(hot_list, word_list):
