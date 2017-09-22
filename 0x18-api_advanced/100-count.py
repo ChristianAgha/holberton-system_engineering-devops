@@ -28,8 +28,9 @@ def parse_titles(hot_list, word_list):
     for word in word_list:
         count = 0
         for title in hot_list:
-            title_words = [word.lower() for word in title.split()]
-            count += title_words.count(word)
+            title_words = [title_word.lower() for title_word in title.split()]
+            if word in title_words:
+                count += title_words.count(word)
         d[word] = count
     sorted_d = sorted(d.items(), key=lambda x: x[1], reverse=True)
     for tupl in sorted_d:
